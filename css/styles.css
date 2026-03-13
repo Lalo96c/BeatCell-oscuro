@@ -70,7 +70,11 @@ NAVBAR
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    cursor: pointer;
+    color: inherit;
+}
+
+.logo:visited {
+    color: inherit;
 }
 
 .logo img {
@@ -80,8 +84,8 @@ NAVBAR
 
 .logo span {
     font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 20px;
+    letter-spacing: 1px;
+    color: #6E00F9;
 }
 
 .menu {
