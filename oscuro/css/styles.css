@@ -1,0 +1,704 @@
+/* ======================
+RESET
+====================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1D1D1B;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* ======================
+VARIABLES
+====================== */
+
+:root {
+    --morado: #6E00F9;
+    --naranja: #FF8329;
+    --negro: #1D1D1B;
+    --gris: #F3F1F6;
+    --blanco: #FFFFFF;
+}
+
+/* ======================
+CONTENEDOR
+====================== */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ======================
+NAVBAR
+====================== */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+    transition: .3s;
+}
+
+.topbar.scrolled {
+    background: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(10px);
+}
+
+.topbar-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo span {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.menu {
+    margin-left: auto;
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--naranja);
+}
+
+/* ======================
+HERO
+====================== */
+
+.hero {
+    position: relative;
+    padding: 120px 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--naranja);
+    color: #000;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.hero-title span {
+    color: var(--morado);
+}
+
+.subtitulo {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.extra {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #a8a8a8;
+}
+
+.beneficios {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* ======================
+FORMULARIO
+====================== */
+
+.formulario {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    width: 340px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+}
+
+.formulario h3 {
+    margin-bottom: 15px;
+    color: var(--naranja);
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #000;
+    color: #fff;
+}
+
+.formulario textarea {
+    resize: none;
+    height: 90px;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 14px;
+    background: var(--morado);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all .3s ease;
+}
+
+.formulario button:hover {
+    background: var(--naranja);
+}
+
+/* ======================
+SECCIONES
+====================== */
+
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.section.dark {
+    background: #111;
+}
+
+.center {
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: var(--naranja);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* ======================
+CARDS
+====================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #111;
+    padding: 28px;
+    border-radius: 12px;
+    border-top: 4px solid var(--morado);
+    transition: .35s;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .6);
+    border-top-color: var(--naranja);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-bottom: 18px;
+}
+
+.card button {
+    background: var(--morado);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card button:hover {
+    background: var(--naranja);
+    transform: scale(1.05);
+}
+
+/* ======================
+GALERIA
+====================== */
+
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ======================
+LIGHTBOX
+====================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ======================
+FAQ
+====================== */
+
+.faq {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+details {
+    background: #111;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* ======================
+CURSO INFO
+====================== */
+
+.curso-info {
+    padding: 70px 0;
+    background: #0f0f0f;
+}
+
+.curso-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.info-box {
+    background: #161616;
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid var(--morado);
+    transition: .3s;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.info-box h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.info-box p {
+    color: #bbb;
+    font-size: 15px;
+}
+
+/* ======================
+FOOTER
+====================== */
+
+.footer {
+    background: #000;
+    padding-top: 60px;
+    border-top: 3px solid var(--morado);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    color: var(--naranja);
+}
+
+.footer-col p {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #9f9f9f;
+    transition: .3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--naranja);
+}
+
+/* ======================
+SOCIAL
+====================== */
+
+.social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--morado);
+    transition: .3s;
+}
+
+.social-icon svg {
+    width: 20px;
+    fill: white;
+}
+
+.social-icon:hover {
+    background: var(--morado);
+}
+
+.social-icon.whatsapp {
+    border-color: #25D366;
+}
+
+.social-icon.whatsapp:hover {
+    background: #25D366;
+}
+
+/* ======================
+WHATSAPP FLOAT
+====================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
+    z-index: 1000;
+}
+
+.whatsapp-float svg {
+    width: 30px;
+    fill: white;
+}
+
+/* ======================
+RESPONSIVE
+====================== */
+
+@media(max-width:900px) {
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+/* ======================
+TECNOLOGÍAS
+====================== */
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.tech span {
+    background: #111;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.tech span:hover {
+    background: var(--morado);
+}
+
+/* ======================
+BOTON CTA
+====================== */
+
+.cta {
+    background: var(--morado);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
+}
+
+.cta:hover {
+    background: var(--naranja);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .6);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    font-size: 14px;
+    color: #999;
+}
+
+#hero-inicio {
+    background:
+        linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
+        url("../img/hero-inicio.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#hero-celulares {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-celulares.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-pc {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-pc.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-electronica {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-electronica.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-electrodomesticos {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-electrodomesticos.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-robotica {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-robotica.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-robotica-kids {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-kids.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-libro-reclamaciones {
+    background:
+        linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-libro-reclamaciones.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero-terminos {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)),
+        url("../img/bg-terminos.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
